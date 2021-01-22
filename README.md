@@ -86,7 +86,7 @@ Bryan Van de ven, Peter Wang, and Mark Wiebe.
 
 I'd also like to thank the thousands of students who have taken this
 course and contributed to its success with their feedback and
-discussion.
+discussion..
 
 ## Questions and Answers
 

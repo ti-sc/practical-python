@@ -21,6 +21,11 @@ while principal > 0:
     total_paid = total_paid + payment
     month = month +1
     payment = payment_regular
+    if(principal < 0):
+        total_paid = total_paid +principal
+        principal = 0
+        
+    print(f'Total paid: ${total_paid:0.2f} in {month}, remaining principal is ${principal:0.2f}')
 
 
 

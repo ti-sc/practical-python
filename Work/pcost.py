@@ -1,20 +1,29 @@
 # pcost.py
 #
 # Exercise 1.27
+import csv
+import sys
+
+
 def portfolio_cost(filename):
     total = 0
     with open(filename,'rt') as portfolio:
         next(portfolio)
-        for line in portfolio:
-            row = line.split(',')
+        rows = csv.reader(portfolio)
+        for row in rows:
             try:
                 n = int(row[1])
                 m = float(row[2])
                 total = total + n * m
             except ValueError:
-                print('Data is corrupted',line)
+                print('Data is corrupted',row)
         
     return(total)
 
-cost = portfolio_cost('Work/Data/portfolio.csv')
+if len(sys.argv) == 2:
+    filename = sys.argv[1]
+else:
+    filename = 'Work/Data/portfolio.csv'
+
+cost = portfolio_cost(filename)
 print('Total cost: ',cost)
